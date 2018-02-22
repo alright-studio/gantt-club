@@ -14,19 +14,22 @@ const mainAppTemplate = path.resolve(__dirname, 'templates', appTemplateName);
 let mainWindow;
 
 const createWindow = () => {
-	mainWindow = new BrowserWindow({width: 800, height: 600});
+	mainWindow = new BrowserWindow({
+		width: 800,
+		height: 600,
+		titleBarStyle: 'hiddenInset',
+		backgroundColor: '#efefef'
+	});
 
 	mainWindow.loadURL(url.format({
 		pathname: mainAppTemplate,
 		protocol: 'file:',
-		slashes: true
+		slashes: true,
 	}));
 
 	mainWindow.on('closed', () => {
 		mainWindow = null;
 	});
-
-	mainWindow.webContents.openDevTools();
 };
 
 app.on('ready', createWindow);

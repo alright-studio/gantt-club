@@ -122,7 +122,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(BUILD_DIR),
-		publicPath: '',
+		publicPath: `http://localhost:${process.env.WEBPACK_PORT}/`,
 		filename: '[name].js',
 	},
 	entry: {
