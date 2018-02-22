@@ -1,0 +1,11 @@
+{
+	"appId": "com.electron.gantt-club",
+	"productName": "Gantt Club",
+	"files": [
+		"build/",
+		"data/",
+		"node_modules/",
+		"src/",
+		"package.json"
+	]
+}

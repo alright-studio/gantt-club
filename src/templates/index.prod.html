@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Gantt Club</title>
+	</head>
+	<body>
+		<script>
+			require('dotenv').config();
+
+			const path = require('path');
+			const ROOT_DIR = path.resolve(__dirname, '..', '..');
+			const productionRendererPath = path.resolve(ROOT_DIR, 'build', 'renderer');
+			
+			// Initialize Styles
+			const link = document.createElement('link');
+			const productionStylesPath = path.resolve(ROOT_DIR, 'build', 'renderer.css');
+			link.rel = 'stylesheet';
+			link.href = productionStylesPath;
+			document.getElementsByTagName('head')[0].appendChild(link);
+
+			// Initialize Renderer
+			require(productionRendererPath);
+		</script>
+	</body>
+</html>

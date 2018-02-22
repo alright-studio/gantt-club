@@ -1,9 +1,14 @@
-import electron from 'electron';
-import path from 'path';
-import url from 'url';
+require('dotenv').config();
 
-const {app, BrowserWindow} = electron;
-const mainAppTemplate = path.resolve(__dirname, 'templates', 'index.html');
+const electron = require('electron');
+const path = require('path');
+const url = require('url');
+
+const DEV = process.env.NODE_ENV === 'development';
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+const appTemplateName = DEV ? 'index.dev.html' : 'index.prod.html';
+const mainAppTemplate = path.resolve(__dirname, 'templates', appTemplateName);
 
 // Cache instance of browser window
 let mainWindow;
@@ -20,6 +25,8 @@ const createWindow = () => {
 	mainWindow.on('closed', () => {
 		mainWindow = null;
 	});
+
+	mainWindow.webContents.openDevTools();
 };
 
 app.on('ready', createWindow);

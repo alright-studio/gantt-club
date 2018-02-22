@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>Gantt Club</title>
+	</head>
+	<body>
+		<script>
+			require('dotenv').config();
+
+			const script = document.createElement('script');
+			const devRendererPath = 'http://localhost:' + process.env.WEBPACK_PORT + '/renderer.js';
+			script.src = devRendererPath;
+			document.head.appendChild(script);
+		</script>
+	</body>
+</html>
