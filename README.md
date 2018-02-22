@@ -1,4 +1,4 @@
-# Swallowtail Tea Shopify Theme
+# Gantt Party
 
 ## Dependencies
 

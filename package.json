@@ -1,9 +1,9 @@
 {
-  "name": "gantt-club",
+  "name": "gantt-party",
   "version": "1.0.0",
-  "description": "Gantt Chart electron app",
+  "description": "A fun gantt",
   "main": "./src/main.js",
-  "repository": "git@github.com:alright-studio/gantt-club.git",
+  "repository": "git@github.com:alright-studio/gantt-party.git",
   "author": "Alright Studio",
   "license": "MIT",
   "private": false,

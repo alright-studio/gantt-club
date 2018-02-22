@@ -1,6 +1,6 @@
 {
-	"appId": "com.electron.gantt-club",
-	"productName": "Gantt Club",
+	"appId": "com.electron.gantt-party",
+	"productName": "Gantt Party",
 	"files": [
 		"build/",
 		"data/",
