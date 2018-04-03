@@ -1,0 +1,7 @@
+.menu {
+	-webkit-app-region: drag;
+	height: var(--layout-menu-bar-height);
+	line-height: var(--layout-menu-bar-height);
+	text-align: center;
+	border-bottom: 1px solid var(--color-border);
+}

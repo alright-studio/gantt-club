@@ -11,7 +11,13 @@ const CONTEXT = path.resolve(ROOT_DIR, 'src');
 //
 
 const alias = {
-	//actions: path.resolve(ROOT_DIR, 'src', 'actions'),
+	components: path.resolve(ROOT_DIR, 'src', 'components'),
+	middlewares: path.resolve(ROOT_DIR, 'src', 'middlewares'),
+	reducers: path.resolve(ROOT_DIR, 'src', 'reducers'),
+	styles: path.resolve(ROOT_DIR, 'src', 'styles'),
+	templates: path.resolve(ROOT_DIR, 'src', 'templates'),
+	themes: path.resolve(ROOT_DIR, 'src', 'themes'),
+	utils: path.resolve(ROOT_DIR, 'src', 'utils'),
 };
 
 //

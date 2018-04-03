@@ -3,14 +3,18 @@
 		<title>Gantt Party</title>
 	</head>
 	<body>
-		<main>yo whatup</main>
+		<div id="mount-node"></div>
 		<script>
-			require('dotenv').config();
-
 			const path = require('path');
 			const ROOT_DIR = path.resolve(__dirname, '..', '..');
-			const productionRendererPath = path.resolve(ROOT_DIR, 'build', 'renderer');
-			
+
+			// Environment config
+			require('dotenv').config();
+
+			// Inject config into renderer
+			const themePath = path.resolve(ROOT_DIR, 'src', 'themes', 'default.json');
+			window.DEFAULT_THEME = require(themePath);
+
 			// Initialize Styles
 			const link = document.createElement('link');
 			const productionStylesPath = path.resolve(ROOT_DIR, 'build', 'renderer.css');
@@ -19,6 +23,7 @@
 			document.getElementsByTagName('head')[0].appendChild(link);
 
 			// Initialize Renderer
+			const productionRendererPath = path.resolve(ROOT_DIR, 'build', 'renderer');
 			require(productionRendererPath);
 		</script>
 	</body>

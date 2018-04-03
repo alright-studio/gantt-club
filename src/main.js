@@ -3,6 +3,7 @@ require('dotenv').config();
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
+const theme = require('./themes/default.json');
 
 const DEV = process.env.NODE_ENV === 'development';
 const app = electron.app;
@@ -15,10 +16,13 @@ let mainWindow;
 
 const createWindow = () => {
 	mainWindow = new BrowserWindow({
-		width: 800,
-		height: 600,
-		titleBarStyle: 'hiddenInset',
-		backgroundColor: '#efefef'
+		titleBarStyle: 'hidden-inset',
+		frame: false,
+		width: theme.layout.initialWidth,
+		height: theme.layout.initialHeight,
+		minWidth: theme.layout.minHeight,
+		minHeight: theme.layout.minWidth,
+		backgroundColor: theme.colors.background,
 	});
 
 	mainWindow.loadURL(url.format({

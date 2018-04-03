@@ -1,12 +1,18 @@
 <html>
 	<head>
 		<title>Gantt Party</title>
+		<style id="theme-config"></style>
 	</head>
 	<body>
-		<main>yo whatup</main>
+		<div id="mount-node"></div>
 		<script>
+			// Environment config
 			require('dotenv').config();
 
+			// Inject config into renderer
+			window.DEFAULT_THEME = require('../themes/default.json');
+
+			// Load renderer from webpack
 			const script = document.createElement('script');
 			const devRendererPath = 'http://localhost:' + process.env.WEBPACK_PORT + '/renderer.js';
 			script.src = devRendererPath;

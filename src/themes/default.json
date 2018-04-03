@@ -1,0 +1,21 @@
+{
+	"layout": {
+		"initialWidth": 800,
+		"initialHeight": 600,
+		"minWidth": 500,
+		"minHeight": 500,
+
+		"menuBarHeight": 38
+	},
+
+	"colors": {
+		"background": "#1C1C1C",
+		"border": "#000",
+		"text": "#FFF"
+	},
+
+	"typography": {
+		"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+		"fontSize": "14px"
+	}
+}
