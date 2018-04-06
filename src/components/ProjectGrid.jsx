@@ -39,7 +39,8 @@ export default createClass({
 			gridOffsetX,
 			gridOffsetY,
 			footerOffsetY,
-			footerHeight
+			footerHeight,
+			legendWidth
 		} = this.state;
 
 		return (
@@ -48,6 +49,7 @@ export default createClass({
 					className={styles.canvas}
 					onWheel={this.onWheelHeader}>
 					<div style={{
+						marginLeft: legendWidth,
 						padding: 20,
 						background: 'green',
 						transform: `translateX(${gridOffsetX}px)`}}>
@@ -59,20 +61,41 @@ export default createClass({
 					onWheel={this.onWheelGrid}>
 					<div style={{
 						padding: 20,
+						marginLeft: legendWidth,
 						background: 'blue',
 						transform: `translate(${gridOffsetX}px, ${gridOffsetY}px)`}}>
 						grid - {gridOffsetX}, {gridOffsetY}
 					</div>
+					<div style={{
+						padding: 20,
+						position: 'absolute',
+						left: 0,
+						top: gridOffsetY,
+						width: legendWidth,
+						background: 'teal'}}>
+						legend
+					</div>
 				</Layout.Fluid>
 				<Layout.Fixed
 					className={styles.canvas}
-					onWheel={this.onWheelFooter}>
+					onWheel={this.onWheelFooter}
+					style={{height: footerHeight}}>
 					<div style={{
 						padding: 20,
+						marginLeft: legendWidth,
 						background: 'red',
 						height: footerHeight,
 						transform: `translate(${gridOffsetX}px, ${footerOffsetY}px)`}}>
 						footer - {gridOffsetX}, {footerOffsetY}
+					</div>
+					<div style={{
+						padding: 20,
+						position: 'absolute',
+						left: 0,
+						top: footerOffsetY,
+						width: legendWidth,
+						background: 'teal'}}>
+						legend -footer
 					</div>
 				</Layout.Fixed>
 			</Layout>
