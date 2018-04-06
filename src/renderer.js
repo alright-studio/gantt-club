@@ -1,12 +1,12 @@
+// Reset CSS before importing any components
+import './styles/reset.scss';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import loadTheme from 'utils/loadTheme';
 import App from 'components/App';
 
 const mountNode = document.getElementById('mount-node');
-
-// Reset CSS
-import './styles/reset.scss';
 
 // Load Theme
 loadTheme(window.DEFAULT_THEME);

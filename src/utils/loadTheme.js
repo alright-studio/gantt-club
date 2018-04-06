@@ -4,6 +4,7 @@ export default theme => {
 	const themeCSS = `
 		:root {
 			--layout-menu-bar-height: ${theme.layout.menuBarHeight}px;
+			--layout-cell-size: ${theme.layout.cellSize}px;
 
 			--color-background: ${theme.colors.background};
 			--color-border: ${theme.colors.border};

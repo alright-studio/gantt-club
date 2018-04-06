@@ -1,0 +1,15 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-content: stretch;
+	height: 100%;
+	overflow: hidden;
+}
+
+.fluid {
+	flex: 1;
+	min-width: 1px; // https://stackoverflow.com/questions/36150458/flex-item-overflows-container-due-to-long-word-even-after-using-word-wrap
+	min-height: 1px;
+	height: 100%;
+	overflow: hidden;
+}

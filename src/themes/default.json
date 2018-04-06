@@ -5,7 +5,8 @@
 		"minWidth": 500,
 		"minHeight": 500,
 
-		"menuBarHeight": 38
+		"menuBarHeight": 38,
+		"cellSize": 30
 	},
 
 	"colors": {
