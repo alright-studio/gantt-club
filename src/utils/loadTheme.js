@@ -9,9 +9,10 @@ export default theme => {
 			--color-background: ${theme.colors.background};
 			--color-border: ${theme.colors.border};
 			--color-text: ${theme.colors.text};
+			--color-text-secondary: ${theme.colors.textSecondary};
 			
 			--font-family: ${theme.typography.fontFamily};
-			--font-size: ${theme.typography.fontSize};
+			--font-size: ${theme.typography.fontSize}px;
 		}
 	`;
 	

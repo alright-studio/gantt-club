@@ -11,12 +11,13 @@
 
 	"colors": {
 		"background": "#1C1C1C",
-		"border": "#000",
-		"text": "#FFF"
+		"border": "#000000",
+		"text": "#FFFFFF",
+		"textSecondary": "#606060"
 	},
 
 	"typography": {
 		"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
-		"fontSize": "14px"
+		"fontSize": 14
 	}
 }
