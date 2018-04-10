@@ -8,6 +8,10 @@ import endOfYear from 'date-fns/end_of_year';
 import eachDay from 'date-fns/each_day';
 import getMonth from 'date-fns/get_month';
 import getDate from 'date-fns/get_date';
+import isMonday from 'date-fns/is_monday';
+import isFriday from 'date-fns/is_friday';
+import isSaturday from 'date-fns/is_saturday';
+import isSunday from 'date-fns/is_sunday';
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
@@ -80,10 +84,11 @@ const ProjectGrid = createClass({
 					className={styles.canvas}
 					onWheel={this.onWheelGrid}>
 					<div style={{
-						padding: 20,
-						background: 'blue',
-						transform: `translate(${gridOffsetX}px, ${gridOffsetY}px)`}}>
-						grid - {gridOffsetX}, {gridOffsetY}
+						marginTop: -1,
+						marginLeft: -1,
+						transform: `translate(${gridOffsetX}px, ${gridOffsetY}px)`
+					}}>
+						{this.renderDateGrid()}
 					</div>
 
 					<div style={{
@@ -211,7 +216,58 @@ const ProjectGrid = createClass({
 				</tbody>
 			</table>
 		);
-	}
+	},
+
+	renderDateGrid() {
+		const days = this.getVisibleDays();
+		const {groups, projects} = this.props;
+		
+		const dayCells = days.map((day, index) => {
+			const isLastCell = index === days.length - 1;
+			const dateCellClassName = classNames(styles.cell, styles.projectDateCell, {
+				[styles.leftBorder]: isMonday(day) || isSaturday(day),
+				[styles.rightBorder]: isFriday(day) || isSunday(day) || isLastCell,
+			});
+
+			return (
+				<td
+					key={day}
+					className={dateCellClassName}
+				/>
+			);
+		});
+
+		const groupDateCells = groups.map(group => {
+			const groupProjects = filter(projects, {groupId: group.id});
+
+			return (
+				<React.Fragment key={`group-${group.id}`}>
+					<tr>
+						{dayCells}
+					</tr>
+					{groupProjects.map(project => (
+						<tr key={project.id}>
+							{dayCells}
+						</tr>
+					))}
+					<tr>
+						{dayCells}
+					</tr>
+				</React.Fragment>
+			);
+		});
+
+		return (
+			<table className={styles.table}>
+				<tbody>
+					{groupDateCells}
+					<tr>
+						{dayCells}
+					</tr>
+				</tbody>
+			</table>
+		);
+	},
 });
 
 const mapStateToProps = state => ({

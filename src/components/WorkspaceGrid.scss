@@ -3,7 +3,7 @@
 	position: relative;
 }
 
-.table {
+tr {
 	table-layout: fixed;
 }
 
@@ -16,7 +16,7 @@
 	height: var(--layout-cell-size);
 	min-width: var(--layout-cell-size);
 	min-height: var(--layout-cell-size);
-	line-height: var(--layout-cell-size);
+	line-height: calc(var(--layout-cell-size) - 1px);
 	border: 1px solid var(--color-border);
 	background: var(--color-background);
 	text-align: center;
@@ -34,4 +34,17 @@
 	text-align: left;
 	padding: 0 20px;
 	border-left: none;
+}
+
+.cell.projectDateCell {
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+
+.cell.projectDateCell.leftBorder {
+	border-left-color: var(--color-border);
+}
+
+.cell.projectDateCell.rightBorder {
+	border-right-color: var(--color-border);
 }
