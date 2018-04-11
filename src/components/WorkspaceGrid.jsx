@@ -224,8 +224,9 @@ const ProjectGrid = createClass({
 		
 		const dayCells = days.map((day, index) => {
 			const isLastCell = index === days.length - 1;
+			const isFirstCell = index === 0;
 			const dateCellClassName = classNames(styles.cell, styles.projectDateCell, {
-				[styles.leftBorder]: isMonday(day) || isSaturday(day),
+				[styles.leftBorder]: isMonday(day) || isSaturday(day) || isFirstCell,
 				[styles.rightBorder]: isFriday(day) || isSunday(day) || isLastCell,
 			});
 
